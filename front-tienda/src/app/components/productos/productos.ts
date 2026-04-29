@@ -4,11 +4,12 @@ import { Producto } from '../../models/producto';
 import { FormsModule } from '@angular/forms'
 
 import { FormAddProduct } from './form-add-product/form-add-product';
+import { ProductsTable } from './products-table/products-table';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [FormsModule, FormAddProduct],
+  imports: [FormsModule, FormAddProduct, ProductsTable],
   templateUrl: './productos.html',
   styleUrl: './productos.scss',
 })
@@ -76,8 +77,8 @@ export class ProductosComponent implements OnInit {
   editarProducto(producto: any) {
     this.editando = true;
     this.idEditando = producto.id;
-
     this.nuevoProducto = { ...producto };
+    this.mostrarFormulario = true;
   }
 
   resetForm() {
