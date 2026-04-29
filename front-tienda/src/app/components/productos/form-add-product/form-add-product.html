@@ -1,0 +1,29 @@
+<h2>
+    {{ editando ? 'Editar Producto' : 'Agregar Producto' }}
+</h2>
+
+<form (ngSubmit)="enviar()">
+
+    <input class="form-control mb-2" [(ngModel)]="producto.nombre" name="nombre" placeholder="Nombre Producto" required>
+
+    <input class="form-control mb-2" [(ngModel)]="producto.sku" name="sku" placeholder="SKU">
+
+    <input class="form-control mb-2" [(ngModel)]="producto.categoria" name="categoria" placeholder="Categoría" required>
+
+    <input type="number" class="form-control mb-2" [(ngModel)]="producto.precio" name="precio" placeholder="Precio"
+        required>
+
+    <input type="number" class="form-control mb-2" [(ngModel)]="producto.costo" name="costo" required>
+
+    <input type="number" class="form-control mb-2" [(ngModel)]="producto.stock" name="stock" required>
+
+    <button class="btn btn-primary">
+        {{ editando ? 'Actualizar' : 'Guardar' }}
+    </button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="cancelarForm()">
+        Cancelar
+    </button>
+
+
+
+</form>
